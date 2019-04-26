@@ -1,18 +1,36 @@
 <template>
-	<div class="home">
-		<img alt="Vue logo" src="../assets/logo.png">
-		<HelloWorld msg="Welcome to Your Vue.js App"/>
+	<div class="register">
+		<transition mode="out-in">
+			<phone></phone>
+			<password></password>
+			<other-info></other-info>
+		</transition>
 	</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-	name: 'home',
-	components: {
-		HelloWorld
-	}
-};
+	import Vue from 'vue';
+	new Vue({
+		el: '#register',
+		data: {
+			view: 'phone'
+		},
+		components: {
+			'phone': {
+				template: '<input type="number">'
+			},
+			'password': {
+				template: ''
+			},
+			'other-info': {
+				template: ''
+			}
+		}
+	});
 </script>
+
+<style>
+	#register {
+		margin-top: 100px;
+	}
+</style>
