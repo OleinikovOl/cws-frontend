@@ -9,9 +9,11 @@
 <script>
 	export default({
 		el: 'register',
-		data: {
+		data: function() {
+return {
 			view: 'phone'
-		},
+		};
+},
 		components: {
 			'phone': {
 				template: '<input type="number">'
