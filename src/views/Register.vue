@@ -1,17 +1,14 @@
 <template>
 	<div class="register">
-		<transition mode="out-in">
-			<phone></phone>
-			<password></password>
-			<other-info></other-info>
+		<transition id="register" mode="out-in">
+			<register></register>
 		</transition>
 	</div>
 </template>
 
 <script>
-	import Vue from 'vue';
-	new Vue({
-		el: '#register',
+	export default({
+		el: 'register',
 		data: {
 			view: 'phone'
 		},
